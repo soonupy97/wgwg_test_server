@@ -4,7 +4,8 @@ main{
     justify-content: space-between;
     /* align-items: center; */
     width: 100%;
-    height: 100vh;
+    height: 100%;
+
     background-color: #f6f3ee;
     /* background-color: #cccccc; */
 
@@ -125,13 +126,16 @@ main{
     }
     
     section{
+        background-color: #F6F3EE;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        /* flex-grow: 1; */
         gap: 16px;
         padding-inline: 16px;
-        margin-bottom: 32px;
+        padding-bottom: 32px;
+        /* margin-bottom: 32px; */
 
         h3{
             font-family: 'Pretendard', sans-serif;
@@ -167,6 +171,12 @@ main{
                 align-items: center;
                 justify-content: center;
                 gap: 8px;
+                cursor: pointer;
+
+                &:active {
+                    transform: scale(99.5%); /* 버튼을 약간 축소 */
+                    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.2); /* 그림자를 조금 더 진하게 */
+                }
 
                 img{
                     position: absolute;

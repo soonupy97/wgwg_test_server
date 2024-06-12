@@ -1,6 +1,6 @@
 @charset "utf-8";
 
-body, h1, h2, h3, h4, h5, h6, p, ul, ol, table, dl,button, dd, title, article, figure, figcaption, main, aside, main, aside, title, sub {
+body, h1, h2, h3, h4, h5, h6, p, ul, ol, table, dl,button,main, section, dd, title, article, figure, figcaption, main, aside, main, aside, title, sub {
 	margin: 0;
 	padding: 0;
 }
