@@ -24,12 +24,12 @@ body {
 	line-height: 1.5;
 }
 
-/* @font-face {
+@font-face {
     font-family: 'EBSHMJESaeronRA';
     src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/EBSHMJESaeronRA.woff') format('woff');
     font-weight: normal;
     font-style: normal;
-} */
+}
 @font-face {
     font-family: 'EBSHunminjeongeumSBA';
     src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/EBSHunminjeongeum.woff') format('woff');
