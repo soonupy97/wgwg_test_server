@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="ko">
     <head>
@@ -23,8 +24,7 @@
 
     <!-- Reset CSS and Custom Styles -->
     <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="css/index.css">
-    <!-- <link rel="stylesheet" href="css/name.css"> -->
+    <link rel="stylesheet" href="css/name.css">
 
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
@@ -42,36 +42,36 @@
 </head>
 <body>
     <div class="wrap">
-        <div id="login">
-            <main>
-                <!-- <div class="login_bg"><img src="image/login_bg_pc.png" alt="wgwg_bg"></div> -->
-                <article>
-                    <div class="title">
-                        <h2>
-                            <div class="haetae"><img src="image/Haitai.svg" alt="해태"></div>
-                            <span><img src="image/Union(w).svg" alt="와"></span>
-                            <span><img src="image/Union(g).svg" alt="글"></span>
-                            <span><img src="image/Union(w).svg" alt="와"></span>
-                            <span><img src="image/Union(g).svg" alt="글"></span>
-                        </h2>
-                        <p>- 한글 기념 소통창 -</p>
-                    </div>
-                </article>
-                <section>
-                    <h3>간편 로그인으로 <span>와글와글</span>을 이용해보세요!</h3>
-                    <div class="login_btn">
-                        <button class="kakao" onclick="location.href='name.html'"><img src="image/kakao icon.svg" alt="카카오톡">카카오톡</button>
-                        <button class="naver"><img src="image/naver icon.svg" alt="네이버">네이버</button>
-                        <button class="google"><img src="image/google icon.svg" alt="구글">구글</button>
-                    </div>
+            <main id="name">
+                <section role="header">
+                    <a href="index.html" class="prev"><img src="image/prev.svg" alt="prev"></a>
                 </section>
+                <div class="line">
+                    <span class="active"></span>
+                    <span class="inactive"></span>
+                </div>
+                <article>
+                    <div class="content">
+                        <span>하나.</span>
+                        <h3>호패를 만드시오</h3>
+                    </div>
+                    <input class="nickname" type="text" placeholder="호명은 6글자 이하, 한글만 사용 가능해요.">
+                </article>|
+                <div class="next">
+                    <button>
+                        다음
+                    </button>
+                </div>
             </main>
-        </div>
     </div>
 </body>
 <script>
     $(document).ready(function() {
         $('#login').load('login.html');
+        // $('#login').append('<link rel="stylesheet" href="css/login.css" type="text/css" />');
+        
+        $('#name').load('name.html');
+        // $('#name').append('<link rel="stylesheet" href="css/name.css" type="text/css" />');
     });
 </script>
 </html>
