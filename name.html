@@ -55,24 +55,67 @@
                         <span>하나.</span>
                         <h3>호패를 만드시오</h3>
                     </div>
-                    <input class="nickname" type="text" placeholder="호명은 6글자 이하, 한글만 사용 가능해요.">
+                    <div class="textarea">
+                        <input class="nickname" type="text" placeholder="호명은 6글자 이하, 한글만 사용 가능해요.">
+                        <p>호명은 한글만 사용할 수 있습니다.</p>
+                    </div>
                 </article>
-                <div class="next">
-                    <button>
+                <form class="next">
+                    <p class="mypage">마이페이지에서 재설정이 가능합니다.</p>
+                    <button type="submit">
                         다음
                     </button>
-                </div>
+                </form>
             </main>
     </div>
 </body>
 <script>
-    $(document).ready(function() {
-        $('#login').load('login.html');
-        // $('#login').append('<link rel="stylesheet" href="css/login.css" type="text/css" />');
-        
-        $('#name').load('name.html');
-        // $('#name').append('<link rel="stylesheet" href="css/name.css" type="text/css" />');
+$(function() {
+    $('.nickname').on('input', function() {
+        if (this.value) {
+            $(this).css({
+                'font-size': '1.125em',
+                'font-weight': '600', // semibold
+                'font-family': 'Pretendard'
+            });
+        } else {
+            $(this).css({
+                'font-size': '0.875em',
+                'font-weight': '300'
+            });
+        }
     });
+});
+$(function() {
+    const $nickname = $('.nickname');
+    const $mypage = $('.mypage');
+    const $warning = $('.textarea p');
+    const koreanRegex = /^[ㄱ-힣]+$/;
+
+    $nickname.on('input', function() {
+        const isNotEmpty = this.value.length > 0;
+        const isKorean = koreanRegex.test(this.value);
+        const isTooLong = this.value.length > 6;
+
+        $(this).css({
+            'font-size': isNotEmpty ? '1.125em' : '0.875em',
+            'font-weight': isNotEmpty ? '600' : '300',
+            'border-bottom': (!isKorean && isNotEmpty) || isTooLong ? '1px solid #E75752' : '1px solid #6C9460'
+        });
+
+        $mypage.toggle(isKorean && this.value.length >= 5 && !isTooLong);
+        if (!isKorean && isNotEmpty) {
+            $warning.text('호명은 한글만 사용할 수 있습니다.').show();
+        } else if (isTooLong) {
+            $warning.text('최대 6글자만 사용할 수 있습니다.').show();
+        } else {
+            $warning.hide();
+        }
+    });
+
+    $mypage.hide();
+    $warning.hide();
+});
 </script>
 </html>
 
