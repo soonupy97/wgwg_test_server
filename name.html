@@ -93,10 +93,19 @@ $(function() {
     const $button = $('button'); // 버튼 선택자 추가
     const koreanRegex = /^[가-힣]+$/; // 완성된 한글 글자만 허용
 
+    // 페이지 로드 시 저장된 값 불러오기
+    const savedNickname = localStorage.getItem('nickname');
+    if (savedNickname) {
+        $nickname.val(savedNickname).trigger('input');
+    }
+
     $nickname.on('input', function() {
         const isNotEmpty = this.value.length > 0;
         const isKorean = koreanRegex.test(this.value);
         const isTooLong = this.value.length > 6;
+
+        // 입력된 값 저장
+        localStorage.setItem('nickname', this.value);
 
         $(this).css({
             'font-size': isNotEmpty ? '1.125em' : '0.875em',
