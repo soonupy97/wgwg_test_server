@@ -11,12 +11,12 @@ main{
             height: 100dvh;
             /* flex-grow: 1; */
             gap: 120px;
-            overflow-y: hidden;
+            /* overflow-y: hidden; */
             background-image: url(../image/login_bg_pc2.png);
             background-repeat: no-repeat;
             background-size: auto;
             background-position: center top;
-            padding-inline: 36px;
+            padding-inline: 20px;
             box-sizing: border-box;
 
             *{
@@ -148,7 +148,7 @@ font-family: 'EBSHMJESaeronRA';
         justify-content: center;
         align-items: center;
         gap: 16px;
-        padding-inline: 16px;
+        /* padding-inline: 16px; */
                 padding-bottom: 136px;
                 bottom: 0;
                 width: 438px;
@@ -171,8 +171,9 @@ font-family: 'EBSHMJESaeronRA';
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            gap: 8px;
+            gap: 10px;
             width: 100%;
+            min-width: 464px;
 
             button{
                 position: relative;
@@ -414,12 +415,14 @@ font-family: 'EBSHMJESaeronRA';
                 align-items: center;
                 gap: 8px;
                 width: 100%;
+                min-width: 356px;
     
                 button{
                     position: relative;
                     font-family: 'EBSHunminjeongeumSBA';
                     font-size: 1.5em;
-                    width: 100%;
+                    /* width: 100%; */
+                    min-width: 356px;
                     height: 64px;
                     border: none;
                     border-radius: 6px;
@@ -614,7 +617,7 @@ font-family: 'EBSHMJESaeronRA';
             justify-content: center;
             align-items: center;
             gap: 18px;
-            padding-inline: 16px;
+            /* padding-inline: 16px; */
             margin-bottom: 32px;
             padding-bottom: 0;
             width: 100%;
