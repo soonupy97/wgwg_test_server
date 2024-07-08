@@ -642,6 +642,7 @@ font-family: 'EBSHMJESaeronRA';
                 align-items: center;
                 gap: 8px;
                 width: 100%;
+                min-width: 100%;
     
                 button{
                     position: relative;
