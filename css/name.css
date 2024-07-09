@@ -192,7 +192,7 @@ main {
         align-items: center;
         gap: 8px;
         justify-content: flex-end;
-        padding: 0 20px;
+        padding: 0;
         box-sizing: border-box;
         /* flex-grow: 1; */
         margin-bottom: 30px;
@@ -351,6 +351,7 @@ main {
             flex-direction: column;
             justify-content: space-between;
             /* flex-grow: 1; */
+            gap: 0;
             box-sizing: border-box;
     
             .inner{
