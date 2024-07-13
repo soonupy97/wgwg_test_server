@@ -10,14 +10,17 @@ main {
     /* align-items: center; */
 
     .header_pc {
+        position: relative;
         max-width: 1024px;
         margin: 0 auto;
         /* padding: 20px; */
-        height: 128px;
+            height: 128px;
+
+        
         width: 100%;
         box-sizing: border-box;
         display: flex;
-        align-items: center;
+        align-items: flex-start;
         justify-content: space-between;
 
         .home {
@@ -26,6 +29,8 @@ main {
             justify-content: center;
             width: 160px;
             height: 56px;
+            height: 128px;
+
             /* display: inline-block; */
             /* width: fit-content; */
             /* height: fit-content; */
@@ -37,12 +42,104 @@ main {
                 /* object-fit: cover; */
             }
         }
-        .menu {
+
+        .tab{
+            position: relative;
+            
             display: flex;
-            flex-direction: column;
             align-items: center;
+            flex-direction: column;
             justify-content: center;
+
+
+
+            .tab_menu{
+                width: 162px;
+            height: 80px;
+            background-color: #071A34;
+
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                align-content: center;
+                /* position: absolute; */
+
+            }
+
+            .tab_btm{
+                /* position: absolute; */
+                bottom: -80px;
+                right: 0;
+                width: 100%;
+                height: 100%;
+
+                ul{
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-start;
+                    justify-content: center;
+                    background-color: #071A34;
+                    text-align: center;
+                    color: #fff;
+                    padding-inline: 13px;
+                    gap: 20px;
+
+                    .hello{
+                        width: 100%;
+                        font-family: "EBSHunminjeongeumSBA";
+                        font-size: 16px;
+                        line-height: 22px;
+                        text-align: center;
+                        align-items: center;
+                        flex-grow: 1;
+                        padding-block: 20px;
+                        border-block: 1px solid #304055;
+
+                        span{
+                            color: #E75752;
+                        }
+                    }
+
+                    li{
+                        display: flex;
+                        align-items: center;
+                        align-content: center;
+                        justify-content: flex-start;
+                        padding-inline: 10px;
+                        text-align: left;
+
+                        a{
+                            display: block;
+                            color: #fff;
+                        }
+                    }
+                    .log_out{
+                        width: 100%;
+                        display: flex;
+                        align-items: center;
+                        align-content: center;
+                        justify-content: flex-start;
+                        padding-inline: 10px;
+                        text-align: left;
+                        border-top: 1px solid #304055;
+                        box-sizing: border-box;
+
+                        a{
+                            display: block;
+                            color: #fff;
+                            padding-block: 20px;
+                            width: 100%;
+                        }
+                    }
+                }
+            }
         }
+        
+
+
+        
+        /* ... 기존 CSS ... */
+
     }
 
     .mobile{
@@ -360,6 +457,7 @@ main {
                 gap: 40px;
                 flex-grow: 1;
                 justify-content: center;
+                
     
                 .content {
                     display: flex;
