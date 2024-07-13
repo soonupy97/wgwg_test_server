@@ -56,7 +56,7 @@ main {
             .tab_menu{
                 width: 162px;
             height: 80px;
-            background-color: #071A34;
+            background-color: #071B34;
 
                 display: flex;
                 align-items: center;
@@ -74,15 +74,17 @@ main {
                 height: 100%;
 
                 ul{
+                    /* width: 162px; */
                     display: flex;
                     flex-direction: column;
                     align-items: flex-start;
                     justify-content: center;
-                    background-color: #071A34;
+                    background-color: #071B34;
                     text-align: center;
                     color: #fff;
-                    padding-inline: 13px;
+                    padding-inline: 12px;
                     gap: 20px;
+                    box-sizing: border-box;
 
                     .hello{
                         width: 100%;
@@ -93,10 +95,19 @@ main {
                         align-items: center;
                         flex-grow: 1;
                         padding-block: 20px;
-                        border-block: 1px solid #304055;
+                        border-block: 1px solid #304055;    
 
-                        span{
-                            color: #E75752;
+                        p{
+                            font-size: 1.25rem;
+                            /* font-family: "Pretendard"; */
+                            line-height: 30px;
+                            color: #fff;
+                            text-align: left;
+                            /* word-spacing: -2%; */
+
+                            span{
+                                color: #E75752;
+                            }
                         }
                     }
 
@@ -107,6 +118,7 @@ main {
                         justify-content: flex-start;
                         padding-inline: 10px;
                         text-align: left;
+                        font-weight: bold;
 
                         a{
                             display: block;
@@ -123,12 +135,14 @@ main {
                         text-align: left;
                         border-top: 1px solid #304055;
                         box-sizing: border-box;
+                        padding-block: 20px;
+
 
                         a{
                             display: block;
                             color: #fff;
-                            padding-block: 20px;
                             width: 100%;
+                            font-weight: bold;
                         }
                     }
                 }
