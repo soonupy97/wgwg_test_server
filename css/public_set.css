@@ -13,9 +13,11 @@ main {
         position: relative;
         max-width: 1024px;
         margin: 0 auto;
-        /* padding: 20px; */
-        height: 128px;
+        padding: 0 36px;
+            height: 96px;
+            /* box-sizing: border-box; */
 
+        
         width: 100%;
         box-sizing: border-box;
         display: flex;
@@ -28,7 +30,7 @@ main {
             justify-content: center;
             /* width: 160px; */
             /* height: 56px; */
-            height: 128px;
+            height: 96px;
 
             /* display: inline-block; */
             /* width: fit-content; */
@@ -42,18 +44,20 @@ main {
             }
         }
 
-        .tab {
+        .tab{
             position: relative;
-
+            
             display: flex;
             align-items: center;
             flex-direction: column;
             justify-content: center;
 
-            .tab_menu {
+
+
+            .tab_menu{
                 width: 162px;
-                height: 80px;
-                background-color: #071B34;
+            height: 60px;
+            background-color: #071B34;
 
                 display: flex;
                 align-items: center;
@@ -63,14 +67,14 @@ main {
 
             }
 
-            .tab_btm {
+            .tab_btm{
                 /* position: absolute; */
                 bottom: -80px;
                 right: 0;
                 width: 100%;
                 height: 100%;
 
-                ul {
+                ul{
                     /* width: 162px; */
                     display: flex;
                     flex-direction: column;
@@ -83,7 +87,7 @@ main {
                     gap: 20px;
                     box-sizing: border-box;
 
-                    .hello {
+                    .hello{
                         width: 100%;
                         font-family: "EBSHunminjeongeumSBA";
                         font-size: 16px;
@@ -92,9 +96,9 @@ main {
                         align-items: center;
                         flex-grow: 1;
                         padding-block: 20px;
-                        border-block: 1px solid #304055;
+                        border-block: 1px solid #304055;    
 
-                        p {
+                        p{
                             font-size: 1.25rem;
                             /* font-family: "Pretendard"; */
                             line-height: 30px;
@@ -102,13 +106,13 @@ main {
                             text-align: left;
                             /* word-spacing: -2%; */
 
-                            span {
+                            span{
                                 color: #E75752;
                             }
                         }
                     }
 
-                    li {
+                    li{
                         display: flex;
                         align-items: center;
                         align-content: center;
@@ -117,12 +121,12 @@ main {
                         text-align: left;
                         font-weight: bold;
 
-                        a {
+                        a{
                             display: block;
                             color: #fff;
                         }
                     }
-                    .log_out {
+                    .log_out{
                         width: 100%;
                         display: flex;
                         align-items: center;
@@ -134,7 +138,8 @@ main {
                         box-sizing: border-box;
                         padding-block: 20px;
 
-                        a {
+
+                        a{
                             display: block;
                             color: #fff;
                             width: 100%;
@@ -144,7 +149,10 @@ main {
                 }
             }
         }
+        
 
+
+        
         /* ... 기존 CSS ... */
 
     }
@@ -217,7 +225,7 @@ main {
         flex-direction: column;
         justify-content: center;
         flex-grow: 1;
-        gap: 20px;
+        gap: 40px;
         /* box-sizing: border-box; */
 
         .inner {
@@ -263,9 +271,9 @@ main {
                     justify-content: center;
                     gap: 20px;
                     background-color: #FAFFF9;
-                    border: 2px solid #6C9460;
+                    border: 2px solid #E1E1E1;
                     width: 220px;
-                    border-radius: 10px;
+                    border-radius: 2px;
                     cursor: pointer;
 
                     img {
@@ -278,14 +286,23 @@ main {
                         font-family: "EBSHunminjeongeumSBA";
                         font-size: 20px;
                         line-height: 1.5;
-                        color: #222222;
+                        color: #BFBFBF;
                         text-align: center;
+
+                    }
+                    &.active {
+                        border: 2px solid #6C9460;
+
+                        span{
+                            color: #6C9460;
+                        }
+                        
                     }
 
                 }
             }
             .public_private_desc {
-                display: flex;
+                display: none;
                 flex-direction: column;
 
                 span{
@@ -316,7 +333,8 @@ main {
         /* flex-grow: 1; */
         margin-bottom: 30px;
 
-        p {
+        p.mypage {
+            display: none;
             font-size: 0.875em;
             font-family: "Pretendard";
             /* line-height: 1.5; */

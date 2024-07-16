@@ -13,8 +13,9 @@ main {
         position: relative;
         max-width: 1024px;
         margin: 0 auto;
-        /* padding: 20px; */
-            height: 128px;
+        padding: 0 36px;
+            height: 96px;
+            /* box-sizing: border-box; */
 
         
         width: 100%;
@@ -29,7 +30,7 @@ main {
             justify-content: center;
             /* width: 160px; */
             /* height: 56px; */
-            height: 128px;
+            height: 96px;
 
             /* display: inline-block; */
             /* width: fit-content; */
@@ -55,7 +56,7 @@ main {
 
             .tab_menu{
                 width: 162px;
-            height: 80px;
+            height: 60px;
             background-color: #071B34;
 
                 display: flex;
