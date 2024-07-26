@@ -23,7 +23,7 @@
 
     <!-- Reset CSS and Custom Styles -->
     <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="css/bookcase.css">
+    <link rel="stylesheet" href="css/add_deco.css">
     <!-- <link rel="stylesheet" href="css/name.css"> -->
 
     <!-- Font Awesome -->
@@ -42,8 +42,16 @@
 </head>
 <body>
     <div class="wrap">
-        <div id="bookcase">
-            <main>
+        <div id="dim">
+            <div id="pop_up">
+                <div class="go_to_deco">
+                    <h3>test</h3>
+                </div>
+            </div>
+        </div>
+        
+        <div id="add_deco">
+            <!-- <main>
                 <section role="header">
                     <a href="" class="menu"><img src="image/menu.svg" alt="prev"></a>
                     <h3>와글와글</h3>
@@ -115,13 +123,96 @@
                     </ul>
                 </article>
             </section>
+            </main> -->
+            <main id="name">
+                <header class="header_pc">
+                    <div class="home">
+                        <a href="index.html">
+                            <img src="image/wgwg_logo.svg" alt="prev">
+                        </a>
+                    </div>
+                    <div class="tab">
+                        <div class="tab_menu">
+                            <a href="#">
+                                <img
+                                    src="image/wgwg_menu.svg"
+                                    alt="prev"
+                                    data-default-src="image/wgwg_menu.svg"
+                                    data-active-src="image/wgwg_menu_X.svg">
+                            </a>
+                        </div>
+                        <div class="tab_btm">
+                            <ul>
+                                <div class="hello">
+                                    <p>안녕하신가<br>
+                                        <span>와그르와그르</span>님</p>
+                                </div>
+                                <li>
+                                    <a href="">마이페이지</a>
+                                </li>
+                                <li>
+                                    <a href="">유니어스</a>
+                                </li>
+                                <li>
+                                    <a href="">문의하기</a>
+                                </li>
+                                <div class="log_out">
+                                    <a href="">로그아웃</a>
+                                </div>
+                            </ul>
+                            <img src="image/wgwg_menu-1.svg" alt="prev">
+                        </div>
+                    </div>
+                </header>
+                <section class="mobile">
+                    <header class="header_mo">
+                        <a href="index.html" class="home"><img src="image/prev.svg" alt="prev"></a>
+                        <!-- <a href="index.html" class="menu">
+                            <img src="image/menu.svg" alt="prev">
+                        </a> -->
+                    </header>
+                    <div class="line_mo">
+                        <span class="inactive"></span>
+                        <span class="active"></span>
+                    </div>
+                </section>
             </main>
         </div>
     </div>
 </body>
 <script>
-    $(document).ready(function() {
-        $('#login').load('login.html');
+    $(document).ready(function () {
+        // 처음에 .tab_btm ul 숨기기
+
+        $('.tab_btm ul').hide();
+
+        $('.tab_menu a').on('click', function (e) {
+
+            e.preventDefault(); // 기본 동작 방지
+
+            $('.tab_btm ul').slideToggle(); // 메뉴 토글
+
+            // 이미지 변경
+
+            const $img = $(this).find('img');
+            $img.attr(
+                'src',
+                $img.attr('src') === $img.data('default-src')
+                    ? $img.data('active-src')
+                    : $img.data('default-src')
+            );
+
+        });
+
+        // 배경 클릭 시 슬라이드 업
+
+        $(document).on('click', function (e) {
+
+            if (!$(e.target).closest('.tab_menu, .tab_btm').length) {
+                $('.tab_btm ul').slideUp();
+                $('.tab_menu img').attr('src', $('.tab_menu img').data('default-src')); // 이미지 초기화
+            }
+        });
     });
 </script>
 </html>

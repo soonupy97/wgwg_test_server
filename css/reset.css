@@ -36,3 +36,26 @@ body {
     font-weight: normal;
     font-style: normal;
 }
+/* @font-face {
+    font-family: 'EBSHunminjeongeum-SB';
+    src: url('../fonts/EBSHunminjeongeum-SB.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'EBSHunminjeongeum-SB_R';
+    src: url('../fonts/EBSHunminjeongeum-R.woff') format('woff');
+}
+@font-face {
+    font-family: 'EBSHunminjeongeum-SB_L';
+    src: url('../fonts/EBSHunminjeongeum-L.woff') format('woff');
+}
+@font-face {
+    font-family: 'EBSHMJESaeron-SB';
+    src: url('../fonts/EBSHMJESaeron-SB.woff') format('woff');
+    src: url('../fonts/EBSHMJESaeron-R.woff') format('woff');
+    src: url('../fonts/EBSHMJESaeron-L.woff') format('woff');
+} */
+/* :root {
+    --font-family-saeron: 'EBSHMJESaeron-SB', sans-serif;
+    --font-family-hunmin: 'EBSHMJESaeron-SB', sans-serif;
+} */

@@ -126,7 +126,7 @@
 
                     <form class="next">
                         <p class="mypage">마이페이지에서 재설정이 가능합니다.</p>
-                        <button type="submit">
+                        <button type="button" onclick="location.href='add_deco.html'">
                             나의 책장 만들기
                         </button>
                     </form>
@@ -198,6 +198,7 @@
 
                 // .next button의 배경색 변경
                 $('.next button').css('background-color', '#6C9460');
+                $('.next button').css('pointer-events', 'auto');
             });
         });
     </script>
