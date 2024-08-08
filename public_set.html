@@ -177,29 +177,29 @@
         });
     </script>
 
-    <script role="public_private script">
-                $(document).ready(function() {
-            // .public_private a 클릭 시 .active 클래스 추가 및 .public_private_desc 표시
-            $('.public_private a').on('click', function(e) {
-                e.preventDefault(); // 기본 동작 방지
-                $('.public_private a').removeClass('active'); // 기존 .active 클래스 제거
-                $(this).addClass('active'); // 클릭한 요소에 .active 클래스 추가
-                $('.public_private_desc').css('display', 'flex'); // .public_private_desc 표시
-                $('.mypage').css('display', 'block'); // .public_private_desc 표시
+<script role="public_private script">
+    $(document).ready(function() {
+        // .public_private a 클릭 시 .active 클래스 추가 및 .public_private_desc 표시
+        $('.public_private a').on('click', function(e) {
+            e.preventDefault(); // 기본 동작 방지
+            $('.public_private a').removeClass('active').css('opacity', '0.25'); // 기존 .active 클래스 제거 및 opacity 변경
+            $(this).addClass('active').css('opacity', '1'); // 클릭한 요소에 .active 클래스 추가 및 opacity 변경
+            $('.public_private_desc').css('display', 'flex'); // .public_private_desc 표시
+            $('.mypage').css('display', 'block'); // .public_private_desc 표시
 
-                // 클릭한 클래스가 .public인지 .private인지 확인
-                if ($(this).hasClass('private')) {
-                    $('.public_private_desc span').text('링크로 초대된 사람만 볼 수 있습니다.');
-                    $('.public_private_desc p').text('초대된 사람만 방명록 갯수랑 공개된 방명록을 볼 수 있어요.');
-                } else {
-                    $('.public_private_desc span').text('와글와글 메인에 랜덤으로 공개 됩니다.');
-                    $('.public_private_desc p').text('모든 사람이 방명록 갯수랑 공개된 방명록을 볼 수 있어요.');
-                }
+            // 클릭한 클래스가 .public인지 .private인지 확인
+            if ($(this).hasClass('private')) {
+                $('.public_private_desc span').text('링크로 초대된 사람만 볼 수 있습니다.');
+                $('.public_private_desc p').text('초대된 사람만 방명록 갯수랑 공개된 방명록을 볼 수 있어요.');
+            } else {
+                $('.public_private_desc span').text('와글와글 메인에 랜덤으로 공개 됩니다.');
+                $('.public_private_desc p').text('모든 사람이 방명록 갯수랑 공개된 방명록을 볼 수 있어요.');
+            }
 
-                // .next button의 배경색 변경
-                $('.next button').css('background-color', '#6C9460');
-                $('.next button').css('pointer-events', 'auto');
-            });
+            // .next button의 배경색 변경
+            $('.next button').css('background-color', '#6C9460');
+            $('.next button').css('pointer-events', 'auto');
         });
-    </script>
+    });
+</script>
 </html>

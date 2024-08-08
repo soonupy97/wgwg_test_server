@@ -1,8 +1,8 @@
-body{
+body {
     background-color: #F6F3EE;
 
 }
-#dim{
+#dim {
     position: fixed;
     top: 0;
     left: 0;
@@ -10,8 +10,9 @@ body{
     height: 100%;
     background-color: rgba(34, 34, 34, 0.7);
     z-index: 1;
+    display: none;
 
-    .go_to_deco{
+    .go_to_deco {
         position: absolute;
         top: 50%;
         left: 50%;
@@ -30,17 +31,15 @@ main {
     justify-content: space-between;
     /* justify-content: center; */
     /* align-items: center; */
-    
 
     .header_pc {
         position: relative;
         max-width: 1024px;
         margin: 0 auto;
         padding: 0 36px;
-            height: 96px;
-            /* box-sizing: border-box; */
+        height: 96px;
+        /* box-sizing: border-box; */
 
-        
         width: 100%;
         box-sizing: border-box;
         display: flex;
@@ -67,20 +66,18 @@ main {
             }
         }
 
-        .tab{
+        .tab {
             position: relative;
-            
+
             display: flex;
             align-items: center;
             flex-direction: column;
             justify-content: center;
 
-
-
-            .tab_menu{
+            .tab_menu {
                 width: 162px;
-            height: 60px;
-            background-color: #071B34;
+                height: 60px;
+                background-color: #071B34;
 
                 display: flex;
                 align-items: center;
@@ -90,14 +87,14 @@ main {
 
             }
 
-            .tab_btm{
+            .tab_btm {
                 /* position: absolute; */
                 bottom: -80px;
                 right: 0;
                 width: 100%;
                 height: 100%;
 
-                ul{
+                ul {
                     /* width: 162px; */
                     display: flex;
                     flex-direction: column;
@@ -110,7 +107,7 @@ main {
                     gap: 20px;
                     box-sizing: border-box;
 
-                    .hello{
+                    .hello {
                         width: 100%;
                         font-family: "EBSHunminjeongeumSBA";
                         font-size: 16px;
@@ -119,9 +116,9 @@ main {
                         align-items: center;
                         flex-grow: 1;
                         padding-block: 20px;
-                        border-block: 1px solid #304055;    
+                        border-block: 1px solid #304055;
 
-                        p{
+                        p {
                             font-size: 1.25rem;
                             /* font-family: "Pretendard"; */
                             line-height: 30px;
@@ -129,13 +126,13 @@ main {
                             text-align: left;
                             /* word-spacing: -2%; */
 
-                            span{
+                            span {
                                 color: #E75752;
                             }
                         }
                     }
 
-                    li{
+                    li {
                         display: flex;
                         align-items: center;
                         align-content: center;
@@ -144,12 +141,12 @@ main {
                         text-align: left;
                         font-weight: bold;
 
-                        a{
+                        a {
                             display: block;
                             color: #fff;
                         }
                     }
-                    .log_out{
+                    .log_out {
                         width: 100%;
                         display: flex;
                         align-items: center;
@@ -161,8 +158,7 @@ main {
                         box-sizing: border-box;
                         padding-block: 20px;
 
-
-                        a{
+                        a {
                             display: block;
                             color: #fff;
                             width: 100%;
@@ -172,10 +168,7 @@ main {
                 }
             }
         }
-        
 
-
-        
         /* ... 기존 CSS ... */
 
     }
@@ -234,39 +227,44 @@ main {
         }
     }
 
+    section.select_artwork {
+        width: 768px;
+        height: 640px;
+        padding: 48px;
+        box-sizing: border-box; 
+        display: flex;
+        /* flex-direction: column; */
+        justify-content: center;
+        align-items: flex-start;
+        background-color: #a9a9a9;
+        margin: 0 auto;
+        /* overflow: hidden; */
+        overflow-y: auto;
+
+        border-radius: 10px;
+
+        &::-webkit-scrollbar {
+            display: none; /* Chrome, Safari, Opera용 스크롤바 숨기기 */
+        }
+    }
     article {
-        padding: 0 20px;
-        /* margin: 126px auto 0 auto; */
-        /* margin-top: 66px; */
-        /* margin-top: clamp(35px, 126px, 8.75vw); */
-        /* margin-top: clamp(126px, 126px, 35px); */
-        /* margin-top: 8.75vw; */
-        /* padding-top: max(126px, 8.75vw); */
-        width: 464px;
+
+        width: 100%;
         margin: 0 auto;
         display: flex;
         flex-direction: column;
         justify-content: center;
         flex-grow: 1;
         gap: 40px;
-        /* box-sizing: border-box; */
 
-        .inner {
+        .select_artwork_title {
+            position: relative;
             display: flex;
-            flex-direction: column;
-            gap: 30px;
-
-            .content {
-                display: flex;
                 flex-direction: column;
                 gap: 6px;
                 /* align-items: center; */
                 /* justify-content: center; */
-                margin-bottom: 10px;
-
-                
     
-
                 span {
                     font-family: "EBSHunminjeongeumSBA";
                     line-height: 22px;
@@ -278,77 +276,36 @@ main {
                     line-height: 42px;
                     color: #000;
                 }
-            }
-            .public_private {
-                display: flex;
-                /* flex-direction: column; */
-                gap: 24px;
-                /* margin-bottom: 30px; */
-
-                a {
-                    /* all: unset; */
-                    padding: 35px 17px;
-                    display: flex;
-                    flex-direction: column;
-                    align-items: center;
-                    justify-content: center;
-                    gap: 20px;
-                    background-color: #FAFFF9;
-                    border: 2px solid #E1E1E1;
-                    width: 220px;
-                    border-radius: 2px;
-                    cursor: pointer;
-
-                    img {
-                        width: 100%;
-                        height: 100%;
-                        object-fit: contain;
-                        opacity: 0.5;
-                    }
-
-                    span {
-                        font-family: "EBSHunminjeongeumSBA";
-                        font-size: 20px;
-                        line-height: 1.5;
-                        color: #BFBFBF;
-                        text-align: center;
-
-                    }
-                    &.active {
-                        border: 2px solid #6C9460;
-
-                        span{
-                            color: #222;
-                            font-weight: 600;
-                        }
-                        img{
-                            opacity: 1;
-                        }
-                        
-                    }
-
+                a{
+                    position: absolute;
+                    display: block;
+                    right: 0;
+                    top: 0;
                 }
-            }
-            .public_private_desc {
-                display: none;
-                flex-direction: column;
+        }
+        
+        
+        /* box-sizing: border-box; */
 
-                span{
-                    color: #608256;
-                    font-size: 24px;
-                    line-height: 180%;
-                    font-weight: bold;
-                    letter-spacing: -0.5px;
+        ul {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 24px;
 
-                }
-                p{
-                    font-size: 20px;
-                    line-height: 180%;
-                    color: #626262;
-                    font-weight: normal;
-                    letter-spacing: -0.5px;
+            li {
 
-                }
+                /* width: calc((100% - 48px)/3); */
+                height: 208px;
+                aspect-ratio: 1/1;
+                /* flex-grow: 1; */
+                /* display: flex; */
+                align-items: center;
+                justify-content: center;
+                background-color: #fff;
+                border: 1px solid #6C9460;
+                border-radius: 2px;
+                padding: 10px;
+                box-sizing: border-box;
             }
         }
 
@@ -523,17 +480,17 @@ main {
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            flex-grow: 1; 
+            flex-grow: 1;
             /* gap: 40px; */
             box-sizing: border-box;
             align-items: center;
-    
+
             .inner {
                 display: flex;
                 flex-direction: column;
                 gap: 24px;
                 width: 320px;
-    
+
                 .content {
                     /* width: fit-content; */
                     display: flex;
@@ -543,10 +500,7 @@ main {
                     /* align-items: center; */
                     /* justify-content: center; */
                     margin-bottom: 10px;
-    
-                    
-        
-    
+
                     span {
                         font-family: "EBSHunminjeongeumSBA";
                         line-height: 22px;
@@ -564,10 +518,10 @@ main {
                     /* flex-direction: column; */
                     gap: 16px;
                     /* margin-bottom: 30px; */
-    
+
                     a {
                         /* all: unset; */
-                        padding: 16px 10px 24px 10px;
+                        padding: 16px 10px 24px;
                         display: flex;
                         flex-direction: column;
                         align-items: center;
@@ -579,14 +533,14 @@ main {
                         border-radius: 2px;
                         cursor: pointer;
                         box-sizing: border-box;
-    
+
                         img {
                             width: 100%;
                             height: 100%;
                             object-fit: contain;
                             opacity: 0.5;
                         }
-    
+
                         span {
                             font-family: "EBSHunminjeongeumSBA";
                             font-size: 16px;
@@ -597,30 +551,30 @@ main {
                         }
                         &.active {
                             border: 2px solid #6C9460;
-    
-                            span{
+
+                            span {
                                 color: #6C9460;
                             }
-                            img{
+                            img {
                                 opacity: 1;
                             }
-                            
+
                         }
-    
+
                     }
                 }
                 .public_private_desc {
                     display: none;
                     flex-direction: column;
-    
-                    span{
+
+                    span {
                         color: #608256;
                         font-size: 16px;
                         line-height: 180%;
                         font-weight: bold;
                         letter-spacing: -0.5px;
                     }
-                    p{
+                    p {
                         font-size: 14px;
                         line-height: 180%;
                         color: #626262;
@@ -629,7 +583,7 @@ main {
                     }
                 }
             }
-    
+
         }
         .next {
             width: 100%;
@@ -642,7 +596,7 @@ main {
             box-sizing: border-box;
             /* flex-grow: 1; */
             margin-bottom: 30px;
-    
+
             p.mypage {
                 display: none;
                 font-size: 0.875em;
@@ -650,7 +604,7 @@ main {
                 /* line-height: 1.5; */
                 color: #767676;
             }
-    
+
             button {
                 width: 100%;
                 height: 50px;
@@ -663,7 +617,7 @@ main {
                 color: #fff;
                 cursor: pointer;
             }
-    
+
         }
         .line_pc {
             display: none;
