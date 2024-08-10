@@ -169,7 +169,7 @@ main {
     }
 
     section.select_set {
-        /* position: relative; */
+        position: relative;
         width: 768px;
         height: 640px;
         padding: 48px;
@@ -181,9 +181,12 @@ main {
         background-color: #fff;
         margin: 0 auto;
         /* overflow: hidden; */
+
         overflow-y: auto;
         z-index: 999;
         border-radius: 10px;
+
+        
 
         
 
@@ -202,7 +205,6 @@ main {
             gap: 40px;
     
             .title {
-                position: relative;
                 display: flex;
                     flex-direction: column;
                     gap: 6px;
@@ -221,15 +223,22 @@ main {
                         color: #000;
                     }
                     .artwork_close{
+                        position: absolute;
+                        /* display: flex; */
                         z-index: 999;
-                        position: fixed;
-                        display: block;
-                        right: 26.5%;
-                        top: 23.5%;
-                        transform: translate(-50%, -50%);
+                        /* position: fixed; */
+                        right: 30px;
+                        top: 30px;
+                        transform: translate(-50%, 50%);
+
+                        a{
+                            /* position: fixed; */
+                        }
+
                     }
                     
-            }
+                }
+                
             
             
             /* box-sizing: border-box; */
