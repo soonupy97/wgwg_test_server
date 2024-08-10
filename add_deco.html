@@ -47,11 +47,6 @@
         <div id="add_deco">
             <main id="name">
                 <div id="dim">
-                    <div id="pop_up">
-                        <div class="go_to_deco">
-                            <h3>test</h3>
-                        </div>
-                    </div>
                 </div>
                 <header class="header_pc">
                     <div class="home">
@@ -92,36 +87,58 @@
                         </div>
                     </div>
                 </header>
-                <section class="select_artwork">
-                    <article>
-                        <div class="select_artwork_title">
-                            <span>하나.</span>
-                            <h3>나를 표현할 삽화를 고르시오.</h3>
-                            <a href=""><img src="image/artwork_x.svg" alt=""></a>
-                        </div>
-                    <ul>
-                        <li><a href=""></a></li>
-                        <li><a href=""></a></li>
-                        <li><a href=""></a></li>
-                        <li><a href=""></a></li>
-                        <li><a href=""></a></li>
-                        <li><a href=""></a></li>
-                        <li><a href=""></a></li>
-                        <li><a href=""></a></li>
-                        <li><a href=""></a></li>
-                    </ul>
-                    <div class="public_private_desc">
-                        <span class="private_desc">와글와글 메인에 랜덤으로 공개 됩니다.</span>
-                        <p>모든 사람이 방명록 갯수랑 공개된 방명록을 볼 수 있어요.</p>
-                    </div>
-                    <form class="next">
-                        <p class="mypage">마이페이지에서 재설정이 가능합니다.</p>
-                        <button type="button" onclick="location.href='add_deco.html'">
-                            나의 책장 만들기
-                        </button>
-                    </form>
-                    </article>
-                </section>
+                
+
+                    <section class="select_set">
+                        <article class="set_artwork">
+                            <div class="title">
+                                <span>하나.</span>
+                                <h3>나를 표현할 삽화를 고르시오.</h3>
+                                <a href="" class="artwork_close"><img src="image/artwork_x.svg" alt=""></a>
+                            </div>
+                        <ul class="artwork_list">
+                            <li><a href=""><img src="image/gyeongbokgung-palace 1.png" alt=""></a></li>
+                            <li><a href=""><img src="image/sky-6882623_1920.png" alt=""></a></li>
+                            <li><a href=""><img src="image/korean-traditional-house-with-cumulus-clouds.png" alt=""></a></li>
+                            <li><a href=""><img src="image/gyeongbok-palace-6854763_1920.png" alt=""></a></li>
+                            <li><a href=""><img src="image/tree-3241181_1920.png" alt=""></a></li>
+                            <li><a href=""><img src="image/low-angle-view-tower.png" alt=""></a></li>
+                            <li><a href=""><img src="image/night-view-7523474_1920.png" alt=""></a></li>
+                            <li><a href=""><img src="image/bibimbap-wooden-background-traditional-korean-dish.png" alt=""></a></li>
+                            <li><a href=""><img src="image/grilled-pork-served-with-sauce-korean-style 1.png" alt=""></a></li>
+                        </ul>
+                        <form class="next">
+                            <p class="mypage">마이페이지에서 재설정이 가능합니다.</p>
+                            <button type="button" onclick="location.href='add_deco.html'">
+                                다 음
+                            </button>
+                        </form>
+                        </article>
+                        <article class="set_bg">
+                            <div class="title">
+                                <span>하나.</span>
+                                <h3>나를 표현할 삽화를 고르시오.</h3>
+                                <a href="" class="artwork_close"><img src="image/artwork_x.svg" alt=""></a>
+                            </div>
+                        <ul class="artwork_list">
+                            <li><a href=""><img src="image/gyeongbokgung-palace 1.png" alt=""></a></li>
+                            <li><a href=""><img src="image/sky-6882623_1920.png" alt=""></a></li>
+                            <li><a href=""><img src="image/korean-traditional-house-with-cumulus-clouds.png" alt=""></a></li>
+                            <li><a href=""><img src="image/gyeongbok-palace-6854763_1920.png" alt=""></a></li>
+                            <li><a href=""><img src="image/tree-3241181_1920.png" alt=""></a></li>
+                            <li><a href=""><img src="image/low-angle-view-tower.png" alt=""></a></li>
+                            <li><a href=""><img src="image/night-view-7523474_1920.png" alt=""></a></li>
+                            <li><a href=""><img src="image/bibimbap-wooden-background-traditional-korean-dish.png" alt=""></a></li>
+                            <li><a href=""><img src="image/grilled-pork-served-with-sauce-korean-style 1.png" alt=""></a></li>
+                        </ul>
+                        <form class="next">
+                            <p class="mypage">마이페이지에서 재설정이 가능합니다.</p>
+                            <button type="button" onclick="location.href='add_deco.html'">
+                                다 음
+                            </button>
+                        </form>
+                        </article>
+                    </section>
                 <section class="mobile">
                     <header class="header_mo">
                         <a href="index.html" class="home"><img src="image/prev.svg" alt="prev"></a>
@@ -143,7 +160,7 @@
         </div>
     </div>
 </body>
-<script>
+<script role="tab_menu">
     $(document).ready(function () {
         // 처음에 .tab_btm ul 숨기기
 
@@ -177,6 +194,24 @@
             }
         });
     });
+</script>
+    <script role="artwork_list">
+$(document).ready(function() {
+    $('.artwork_list li a').on('click', function(event) {
+        event.preventDefault();
+        $('.artwork_list li a').css('opacity', '0.5'); // 모든 요소의 투명도 변경
+        $('.artwork_list li a').css('border', '2px solid transparent');
+        $(this).css('opacity', '1'); // 선택된 요소의 투명도 원래대로
+        $(this).css('border', '2px solid #6C9460'); // 선택된 요소의 투명도 원래대로
+        // $(this).css('border-radius', '4px'); // 선택된 요소의 투명도 원래대로
+
+        // 버튼 활성화
+        $('button').css({
+            'pointer-events': 'auto',
+            'background-color': '#6C9460'
+        });
+    });
+});
 </script>
 </html>
 
