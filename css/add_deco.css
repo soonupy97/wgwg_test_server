@@ -290,7 +290,7 @@ main {
             /* display: flex; */
             flex-direction: column;
             justify-content: center;
-            flex-grow: 1;
+            /* flex-grow: 1; */
             gap: 40px;
     
             .title {
