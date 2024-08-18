@@ -167,13 +167,9 @@
 <script role="tab_menu">
     $(document).ready(function () {
         // 처음에 .tab_btm ul 숨기기
-
         $('.tab_btm ul').hide();
-
         $('.tab_menu a').on('click', function (e) {
-
             e.preventDefault(); // 기본 동작 방지
-
             $('.tab_btm ul').slideToggle(); // 메뉴 토글
 
             // 이미지 변경
@@ -247,12 +243,13 @@ $(document).ready(function() {
 });
 </script>
 <script role="error_case">
-    document.querySelectorAll('textarea').forEach(function(textarea) {
+    document.querySelectorAll('.pc_wrap textarea, .mobile_wrap textarea').forEach(function(textarea) {
         textarea.addEventListener('input', function() {
             const maxLength = 100;
             const currentLength = this.value.length;
             const textCount = this.nextElementSibling.querySelector('#textCount');
             const errorCase = this.nextElementSibling.querySelector('#error_case');
+            const button = this.closest('.bookcase_inner').querySelector('button[type="button"]'); // 버튼 선택
             
             textCount.textContent = `${currentLength}/${maxLength}`;
             
@@ -265,17 +262,29 @@ $(document).ready(function() {
                 textCount.style.color = '';
                 errorCase.style.display = 'none'; // 수정된 부분
             }
+
+            const hasEnglish = /[a-zA-Z]/.test(this.value); // 영문 포함 여부 확인
+
+            // 텍스트가 입력되기 시작하면 색상 변경
+            if (currentLength > 0 && !hasEnglish && currentLength <= maxLength) {
+                button.style.pointerEvents = 'auto'; // 버튼 활성화
+                button.style.backgroundColor = '#6C9460'; // 버튼 색상 변경
+            } else {
+                button.style.pointerEvents = 'none'; // 버튼 비활성화
+                button.style.backgroundColor = ''; // 버튼 색상 초기화
+            }
         });
     });
 
     document.addEventListener('DOMContentLoaded', function() {
-        const textareas = document.querySelectorAll('textarea');
+        const textareas = document.querySelectorAll('.pc_wrap textarea, .mobile_wrap textarea');
         const maxLength = 100;
 
         textareas.forEach(function(textarea) {
             const introTextSpans = textarea.nextElementSibling.querySelectorAll('.intro_text span');
             const textCount = textarea.nextElementSibling.querySelector('#textCount');
             const errorCase = textarea.nextElementSibling.querySelector('#error_case');
+            const button = textarea.closest('.bookcase_inner').querySelector('button[type="button"]'); // 버튼 선택
 
             textarea.addEventListener('input', function() {
                 const currentLength = this.value.length;
@@ -285,7 +294,7 @@ $(document).ready(function() {
                 this.style.height = (this.scrollHeight) + 'px';
 
                 // 텍스트가 입력되기 시작하면 색상 변경
-                if (currentLength > 0) {
+                if (currentLength > 0 && !hasEnglish) {
                     introTextSpans.forEach(span => {
                         span.style.color = '#6C9460';
                     });
@@ -313,6 +322,15 @@ $(document).ready(function() {
                     errorCase.style.color = '';
                     textCount.style.color = currentLength > 0 ? '#6C9460' : ''; // 수정된 부분
                     errorCase.style.display = 'none'; // 수정된 부분
+                }
+
+                // 버튼 활성화/비활성화 로직 추가
+                if (currentLength > 0 && !hasEnglish && currentLength <= maxLength) {
+                    button.style.pointerEvents = 'auto'; // 버튼 활성화
+                    button.style.backgroundColor = '#6C9460'; // 버튼 색상 변경
+                } else {
+                    button.style.pointerEvents = 'none'; // 버튼 비활성화
+                    button.style.backgroundColor = ''; // 버튼 색상 초기화
                 }
             });
 
