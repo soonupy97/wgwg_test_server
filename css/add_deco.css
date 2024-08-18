@@ -929,7 +929,7 @@ main {
                         justify-content: space-between;
                         flex-direction: column;
                         gap: 6px;
-                        margin-top: calc(126px - 38px);
+                        /* margin-top: calc(126px - 38px); */
 
                         span {
                             font-family: "EBSHunminjeongeumSBA";
@@ -949,6 +949,7 @@ main {
                             flex-direction: column;
                             align-items: flex-end;
                             justify-content: flex-end;
+                            height: 100%;
                             /* margin-top: 160px; */
                             flex-grow: 1;
                             box-sizing: border-box;
@@ -964,8 +965,8 @@ main {
                                 align-items: center;
                                 font-family: "Pretendard";
                                 width: 100%;
-                                height: 42px;
-                                line-height: 20px;
+                                /* height: auto; */
+                                line-height: 1.5;
                                 border: none;
                                 border-bottom: 1px solid #bebebe;
                                 outline: none;

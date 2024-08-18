@@ -129,9 +129,9 @@
                             <a href="add_deco_1.html" class="home"><img src="image/prev.svg" alt="prev"></a>
                         </header>
                         <div class="line_mo">
+                            <span class="inactive"></span>
+                            <span class="inactive"></span>
                             <span class="active"></span>
-                            <span class="inactive"></span>
-                            <span class="inactive"></span>
                         </div>
                     </div>
                     <section class="select_set">
@@ -247,77 +247,80 @@ $(document).ready(function() {
 });
 </script>
 <script role="error_case">
-    document.getElementById('textInput').addEventListener('input', function() {
-    const maxLength = 100;
-    const currentLength = this.value.length;
-    const textCount = document.getElementById('textCount');
-    const errorCase = document.getElementById('error_case');
-    
-    textCount.textContent = `${currentLength}/${maxLength}`;
-    
-    if (currentLength > maxLength) {
-        errorCase.style.color = '#E75752';
-        textCount.style.color = '#E75752';
-        errorCase.style.display = 'block'; // 추가된 부분
-    } else {
-        errorCase.style.color = '';
-        textCount.style.color = '';
-        errorCase.style.display = 'none'; // 수정된 부분
-    }
-});
-
-// 
-
-document.addEventListener('DOMContentLoaded', function() {
-    const textarea = document.querySelector('textarea');
-    const introTextSpans = document.querySelectorAll('.intro_text span');
-    const maxLength = 100;
-    const textCount = document.getElementById('textCount');
-    const errorCase = document.getElementById('error_case');
-
-    textarea.addEventListener('input', function() {
-        const currentLength = this.value.length;
-        const hasEnglish = /[a-zA-Z]/.test(this.value); // 영문 포함 여부 확인
-        
-        this.style.height = '24px'; // 높이를 자동으로 설정
-        this.style.height = (this.scrollHeight) + 'px';
-
-        // 텍스트가 입력되기 시작하면 색상 변경
-        if (currentLength > 0) {
-            introTextSpans.forEach(span => {
-                span.style.color = '#6C9460';
-            });
-            textCount.style.color = '#6C9460'; // 추가된 부분
-        } else {
-            introTextSpans.forEach(span => {
-                span.style.color = ''; // 기본 색상으로 되돌림
-            });
-            textCount.style.color = ''; // 추가된 부분
-        }
-
-        // 글자 수 업데이트 및 에러 메시지 처리
-        textCount.textContent = `${currentLength}/${maxLength}`;
-        
-        if (currentLength > maxLength || hasEnglish) {
-            errorCase.style.color = '#E75752';
-            textCount.style.color = '#E75752';
-            errorCase.style.display = 'block'; // 추가된 부분
-            if (hasEnglish) {
-                errorCase.textContent = '한글만 사용할 수 있습니다.'; // 영문 포함 시 메시지 변경
+    document.querySelectorAll('textarea').forEach(function(textarea) {
+        textarea.addEventListener('input', function() {
+            const maxLength = 100;
+            const currentLength = this.value.length;
+            const textCount = this.nextElementSibling.querySelector('#textCount');
+            const errorCase = this.nextElementSibling.querySelector('#error_case');
+            
+            textCount.textContent = `${currentLength}/${maxLength}`;
+            
+            if (currentLength > maxLength) {
+                errorCase.style.color = '#E75752';
+                textCount.style.color = '#E75752';
+                errorCase.style.display = 'block'; // 추가된 부분
             } else {
-                errorCase.textContent = '최대 100글자만 사용할 수 있습니다.'; // 글자 수 초과 시 메시지
+                errorCase.style.color = '';
+                textCount.style.color = '';
+                errorCase.style.display = 'none'; // 수정된 부분
             }
-        } else {
-            errorCase.style.color = '';
-            textCount.style.color = currentLength > 0 ? '#6C9460' : ''; // 수정된 부분
-            errorCase.style.display = 'none'; // 수정된 부분
-        }
+        });
     });
 
-    // 초기 높이 설정
-    textarea.style.height = '24px'; // 높이를 자동으로 설정
-    textarea.style.height = (textarea.scrollHeight) + 'px';
-});
+    document.addEventListener('DOMContentLoaded', function() {
+        const textareas = document.querySelectorAll('textarea');
+        const maxLength = 100;
+
+        textareas.forEach(function(textarea) {
+            const introTextSpans = textarea.nextElementSibling.querySelectorAll('.intro_text span');
+            const textCount = textarea.nextElementSibling.querySelector('#textCount');
+            const errorCase = textarea.nextElementSibling.querySelector('#error_case');
+
+            textarea.addEventListener('input', function() {
+                const currentLength = this.value.length;
+                const hasEnglish = /[a-zA-Z]/.test(this.value); // 영문 포함 여부 확인
+                
+                this.style.height = '24px'; // 높이를 자동으로 설정
+                this.style.height = (this.scrollHeight) + 'px';
+
+                // 텍스트가 입력되기 시작하면 색상 변경
+                if (currentLength > 0) {
+                    introTextSpans.forEach(span => {
+                        span.style.color = '#6C9460';
+                    });
+                    textCount.style.color = '#6C9460'; // 추가된 부분
+                } else {
+                    introTextSpans.forEach(span => {
+                        span.style.color = ''; // 기본 색상으로 되돌림
+                    });
+                    textCount.style.color = ''; // 추가된 부분
+                }
+
+                // 글자 수 업데이트 및 에러 메시지 처리
+                textCount.textContent = `${currentLength}/${maxLength}`;
+                
+                if (currentLength > maxLength || hasEnglish) {
+                    errorCase.style.color = '#E75752';
+                    textCount.style.color = '#E75752';
+                    errorCase.style.display = 'block'; // 추가된 부분
+                    if (hasEnglish) {
+                        errorCase.textContent = '한글만 사용할 수 있습니다.'; // 영문 포함 시 메시지 변경
+                    } else {
+                        errorCase.textContent = '최대 100글자만 사용할 수 있습니다.'; // 글자 수 초과 시 메시지
+                    }
+                } else {
+                    errorCase.style.color = '';
+                    textCount.style.color = currentLength > 0 ? '#6C9460' : ''; // 수정된 부분
+                    errorCase.style.display = 'none'; // 수정된 부분
+                }
+            });
+
+            // 초기 높이 설정
+            textarea.style.height = '24px'; // 높이를 자동으로 설정
+            textarea.style.height = (textarea.scrollHeight) + 'px';
+        });
+    });
 </script>
 
 </html>
