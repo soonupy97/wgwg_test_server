@@ -155,6 +155,10 @@ main {
             &:has(article.set_bg) {
                 height: auto;
             }
+            &:has(article.set_intro) {
+                height: auto;
+                width: fit-content;
+            }
             &:has(article.set_bookcase) {
                 button {
                 }
@@ -178,17 +182,40 @@ main {
                 }
             }
             article.set_intro {
-                width: 100%;
+                position: relative;
                 margin: 0 auto;
                 display: flex;
                 flex-direction: column;
                 justify-content: center;
                 flex-grow: 1;
                 gap: 40px;
+                padding-top: 24px;
+
+                .intro_close {
+                    position: absolute;
+                    display: block;
+                    justify-content: flex-end;
+                    /* position: sticky; */
+                    width: 36px;
+                    height: 36px;
+                    aspect-ratio: 1/1;
+                    z-index: 999;
+                    right: 0;
+                    top: 0;
+                    transform: translate(100%, -100%);
+
+                    img {
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                    }
+                }
+
                 .title {
                     position: relative;
                     display: flex;
                     flex-direction: column;
+                    align-items: center;
                     gap: 6px;
                     span {
                         font-family: "EBSHunminjeongeumSBA";
@@ -197,7 +224,7 @@ main {
                     }
                     h3 {
                         font-family: "EBSHunminjeongeumSBA";
-                        font-size: 32px;
+                        font-size: 28px;
                         line-height: 42px;
                         color: #222;
                     }
@@ -228,6 +255,25 @@ main {
                                 object-fit: cover;
                             }
                         }
+                    }
+                }
+
+                .next {
+                    cursor: pointer;
+                    pointer-events: auto;
+                    
+                    button {
+                        width: 340px;
+                        height: 50px;
+                        background-color: #6C9460;
+                        border-radius: 6px;
+                        border: none;
+                        font-size: 16px;
+                        font-family: "EBSHunminjeongeumSBA";
+                        line-height: 30px;
+                        color: #fff;
+                        cursor: pointer;
+                        pointer-events: auto;
                     }
                 }
             }
@@ -473,12 +519,19 @@ main {
                     background-color: #B5CFB0;
                     border-radius: 6px;
                     border: none;
-                    font-size: 20px;
+                    font-size: 16px;
                     font-family: "EBSHunminjeongeumSBA";
                     line-height: 30px;
                     color: #fff;
                     cursor: pointer;
                     pointer-events: none;
+                }
+
+                &:has(article.set_intro) {
+                    button {
+                        pointer-events: auto;
+                        cursor: pointer;
+                    }
                 }
             }
         }
