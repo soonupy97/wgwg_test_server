@@ -134,8 +134,12 @@ main {
             height: 100vh;
             position: relative;
             display: flex;
+            /* overflow-x: auto; */
+            overflow-x: auto;
+            scrollbar-width: none;
 
             aside {
+                position: relative;
                 /* position: fixed; */
                 min-width: 464px;
                 max-width: 464px;
@@ -143,10 +147,11 @@ main {
                 background-color: #fff;
                 display: flex;
                 flex-direction: column;
-                /* justify-content: space-between; */
+                justify-content: flex-start;
+                padding-bottom: 71px;
 
                 .inform-title {
-                    position: relative;
+                    /* position: relative; */
                     flex-grow: 1;
                     /* height: fit-content; */
 
@@ -170,6 +175,10 @@ main {
                 .my_bookcase-title {
                     padding: 40px 30px;
                     font-family: "pretendard";
+                    margin-bottom: 70px;
+                    border-bottom: 1px solid #316920;
+
+
 
                     p {
                         font-size: 16px;
@@ -178,8 +187,13 @@ main {
                     }
                 }
                 .my_bookcase-btn {
+                    position: fixed;
+                    width: 464px;
+                    bottom: 0;
                     padding: 20px 30px;
-                    border-top: 1px solid #316920;
+                    box-sizing: border-box;
+                    background-color: #EAE0CD;
+                    /* background-color: #fff; */
 
                     a {
                         display: flex;
@@ -201,8 +215,8 @@ main {
             width: 100%;
             height: auto;
             padding-left: 36px;
-            /* background-color: #f90; */
-            /* margin-left: 464px; */
+            
+
 
             .bookcase-list {
                 display: flex;
@@ -210,6 +224,10 @@ main {
                 gap: 27px;
                 width: 100%;
                 height: 500px;
+                max-width: 100%;
+                flex-grow: 1;
+                padding-right: 36px;
+
 
                 /* background-color: #f90; */
 
@@ -221,6 +239,7 @@ main {
                     border: 2px solid #DAD5C8;
                     min-width: 220px;
                     height: 100%;
+
                 }
 
                 .my_bookcase {
@@ -234,8 +253,10 @@ main {
                     height: 100%;
                     gap: 16px;
                     flex-wrap: wrap;
-                    overflow-x: auto;
-                    scrollbar-width: none;
+                    flex-grow: 1;
+                    padding-right: 36px;
+
+                    
 
                     li {
                         display: flex;

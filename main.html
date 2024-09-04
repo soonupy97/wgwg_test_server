@@ -182,6 +182,11 @@
                                         </div>
                                         <p>심청이가</p>
                                     </li>
+                                    <li>
+                                        <div class="book_img">
+                                        </div>
+                                        <p>심청이가</p>
+                                    </li>
                                 </ul>
                             </div>
                             
@@ -190,7 +195,7 @@
                 </div>
 
                 <!-- mobile -->
-                <div class="mobile_wrap intro">
+                <div class="mobile_wrap main">
                     <div class="header_wrap">
                         <header class="header_mo">
                             <a href="public_set.html" class="home"><img src="image/prev.svg" alt="prev"></a>
@@ -267,5 +272,14 @@
                 $('button').css({'pointer-events': 'auto', 'background-color': '#6C9460'});
             });
         });
+    </script>
+
+    <script role="scrollX_bookcase">
+        $(document).ready(function() {
+    $('section').on('mousewheel', function(event) {
+        this.scrollLeft -= (event.originalEvent.wheelDeltaY);
+        event.preventDefault();
+    });
+});
     </script>
 </html>
