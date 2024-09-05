@@ -135,6 +135,7 @@ section{
                 box-sizing: border-box;
                 border-radius: 6px;
                 background-color: #fff;
+                box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.1);
     
                 .profile_img{
                     width: 92px;
@@ -177,6 +178,35 @@ section{
 
         &.anyone{
             margin-block: 70px;
+
+            .figure_list{
+
+                figure{
+
+                    .profile_img{
+                        min-width: 80px;
+                        max-width: 80px;
+                        min-height: 80px;
+                        max-height: 80px;
+
+                        object-fit: cover;
+                    }
+
+                    .profile_desc{
+                    overflow: hidden;
+                    flex-grow: 1;
+                        width: fit-content;
+
+
+                        p{
+                            display: block;
+                            text-overflow: ellipsis;
+                            overflow: hidden;
+                            white-space: nowrap;
+                        }
+                    }
+                }
+            }
 
             .reset{
                 all: unset;
