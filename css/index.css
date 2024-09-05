@@ -15,8 +15,7 @@ main{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: auto;
-    min-height: 100dvh;
+    height: 100dvh;
     /* background-color: #fff; */
 
     
