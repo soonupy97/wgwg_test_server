@@ -272,23 +272,23 @@ footer{
     flex-direction: column;
     align-items: center;
     bottom: -2%;
-    left: 92%;
+    right: 2%;
     /* right: 1%; */
     /* left: 0; */
-    transform: translate(-50%, -50%);
+    transform: translate(0, -35%);
     opacity: 0.5;
     opacity: 1;
-    width: 100%;
+    /* width: 100%; */
     z-index: 99999;
 
     .mouse {
         width: 3px;
-        padding: 10px 15px;
-        height: 35px;
+        padding: 8px 10px;
+        height: 24px;
         border: 2px solid #6C9460;
         border-radius: 25px;
         opacity: 0.75;
-        box-sizing: content-box;
+        box-sizing: content;
 
         .scroller {
             width: 3px;
