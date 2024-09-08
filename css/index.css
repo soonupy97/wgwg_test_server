@@ -266,3 +266,55 @@ footer{
         }
     }
 }
+#scroll_downs {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    bottom: -2%;
+    left: 92%;
+    /* right: 1%; */
+    /* left: 0; */
+    transform: translate(-50%, -50%);
+    opacity: 0.5;
+    opacity: 1;
+    width: 100%;
+    z-index: 99999;
+
+    .mouse {
+        width: 3px;
+        padding: 10px 15px;
+        height: 35px;
+        border: 2px solid #6C9460;
+        border-radius: 25px;
+        opacity: 0.75;
+        box-sizing: content-box;
+
+        .scroller {
+            width: 3px;
+            height: 10px;
+            border-radius: 25%;
+            background-color: #6C9460;
+            animation-name: scroller;
+            animation-duration: 2.2s;
+            animation-timing-function: cubic-bezier(.15,.41,.69,.94);
+            animation-iteration-count: infinite;
+        }
+    }
+
+    
+
+    p {
+        display: block;
+        margin-top: 8px;
+        text-align: center;
+        color: #6C9460;
+    }
+}
+
+/* 키프레임은 영역 밖에 배치*/
+@keyframes scroller {
+0% { opacity: 0; }
+10% { transform: translateY(0); opacity: 1; }
+100% { transform: translateY(15px); opacity: 0;}
+}
