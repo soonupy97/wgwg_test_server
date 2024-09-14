@@ -35,8 +35,20 @@ body{
         height: 100dvh;
         background: url(../image/login_bg_pc.png) no-repeat top center;
         filter:opacity(0.35);
+        background-size: cover;
+        z-index: 0;
+    }
+    &::after{
+        content: '';
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100dvw;
+        height: 100dvh;
+        background: linear-gradient(180deg, #E7DDCB 0%, #E8DFD1 75%, #F6F3EE 100%);
+        /* filter:opacity(1); */
         background-size: 100%;
-
+        z-index: -1;
     }
 
     .deco_tree{
@@ -226,11 +238,12 @@ align-items: center;
                     justify-content: center;
                     gap: 16px;
 
-                        figure{
+                        .figure{
+                            color: #000;
                             width: 444px;
                             display: flex;
                             align-items: center;
-                            background-color: #fff;
+                            background-color: #EFE9DF;
                             padding: 10px;
                             box-sizing: border-box;
                             border-radius: 6px;
@@ -266,7 +279,7 @@ align-items: center;
                                     text-overflow: ellipsis;
                                     overflow: hidden;
                                     white-space: nowrap;
-                                    margin-top: 8px;
+                                    margin-top: 4px;
                                     font-size: 12px;
                                 }
                                 span{
@@ -280,6 +293,11 @@ align-items: center;
                                     color: #2B6A1B;
                                 }
                             }
+                            &:hover{
+                                background-color: #fff;
+                                box-shadow: 4px 8px 20px 0 rgba(222, 210, 192, 0.8);
+                            }
+                            
                         }
 
                 }
@@ -305,11 +323,9 @@ align-items: center;
                     align-items: center;
                     justify-content: center;
                     width: 100%;
+                    z-index: 1;
     
                     &:hover{
-                        svg g rect{
-                            fill: #56714D;
-                        }
     
                         .up_right-arrow{
                             position: absolute;
@@ -412,6 +428,43 @@ align-items: center;
             }
         }
     }
+    #scroll_downs {
+        position: fixed;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        bottom: -2%;
+        right: 2%;
+        transform: translate(0, -35%);
+        opacity: 1;
+        z-index: 99999;
+    
+        .mouse {
+            width: 3px;
+            padding: 8px 10px;
+            height: 24px;
+            border: 2px solid #6C9460;
+            border-radius: 25px;
+            opacity: 0.75;
+    
+            .scroller {
+                width: 3px;
+                height: 10px;
+                border-radius: 25%;
+                background-color: #6C9460;
+                animation-name: scroller;
+                animation-duration: 2.25s;
+                animation-timing-function: cubic-bezier(.15,.41,.69,.94);
+                animation-iteration-count: infinite;
+            }
+        }
+    
+        p {
+            margin-top: 8px;
+            text-align: center;
+            color: #6C9460;
+        }
+    }
 }
     
 @media screen and (min-width: 1024px){
@@ -440,6 +493,18 @@ align-items: center;
             background: url(../image/login_bg_mobile.png) repeat top center / contain;
         filter:opacity(0.35);
 
+        }
+
+        &::after{
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100dvw;
+            height: 100dvh;
+            background: linear-gradient(180deg, #E7DDCB 0%, #E8DFD1 75%, #F6F3EE 100%);
+            /* filter:opacity(0.35); */
+            z-index: -1;
         }
         /* height: 100dvh; */
 
@@ -533,6 +598,44 @@ align-items: center;
                 color: #fff;
             }
         }
+
+        #scroll_downs {
+            position: absolute;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            bottom: 10%;
+            right: 4%;
+            transform: translate(0, -35%);
+            opacity: 1;
+            z-index: 99999;
+        
+            .mouse {
+                width: 3px;
+                padding: 8px 10px;
+                height: 24px;
+                border: 2px solid #6C9460;
+                border-radius: 25px;
+                opacity: 0.75;
+        
+                .scroller {
+                    width: 3px;
+                    height: 10px;
+                    border-radius: 25%;
+                    background-color: #6C9460;
+                    animation-name: scroller;
+                    animation-duration: 2.25s;
+                    animation-timing-function: cubic-bezier(.15,.41,.69,.94);
+                    animation-iteration-count: infinite;
+                }
+            }
+        
+            p {
+                margin-top: 8px;
+                text-align: center;
+                color: #6C9460;
+            }
+        }
     }
     
     section{
@@ -545,7 +648,7 @@ align-items: center;
         width: 100%;
         margin: 0 auto;
         box-sizing: border-box;
-        background-color: #F6F3EE;
+        /* background-color: #F6F3EE; */
     
         article{
             display: flex;
@@ -672,43 +775,7 @@ align-items: center;
         }
     }
     
-    #scroll_downs {
-        position: fixed;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        bottom: -2%;
-        right: 2%;
-        transform: translate(0, -35%);
-        opacity: 1;
-        z-index: 99999;
     
-        .mouse {
-            width: 3px;
-            padding: 8px 10px;
-            height: 24px;
-            border: 2px solid #6C9460;
-            border-radius: 25px;
-            opacity: 0.75;
-    
-            .scroller {
-                width: 3px;
-                height: 10px;
-                border-radius: 25%;
-                background-color: #6C9460;
-                animation-name: scroller;
-                animation-duration: 2.25s;
-                animation-timing-function: cubic-bezier(.15,.41,.69,.94);
-                animation-iteration-count: infinite;
-            }
-        }
-    
-        p {
-            margin-top: 8px;
-            text-align: center;
-            color: #6C9460;
-        }
-    }
 }
 
 @media screen and (min-width: 768px) and (max-width: 1023px) {
