@@ -85,6 +85,7 @@ align-items: center;
                 flex-direction: column;
                 align-items: flex-start;
                 justify-content: space-between;
+                gap: 135px;
                 /* gap: 135px; */
                 /* height: fit-content; */
                 .landing_title{
