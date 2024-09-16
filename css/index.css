@@ -781,7 +781,7 @@ align-items: center;
         }
     }
     #arrow_downs {
-        position: fixed;
+        position: absolute;
         bottom: 50px;
         left: 50%;
         /* transform: translate(0, -35%); */
