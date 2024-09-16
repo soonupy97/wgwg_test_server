@@ -111,6 +111,7 @@ section.error_page{
 
             .error_404{
                 ul{
+                    gap: 6px;
                     li{
                         width: 40px;
                     }
